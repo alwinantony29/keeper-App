@@ -1,4 +1,5 @@
 import React from 'react'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const Note = (props) => {
   return (
@@ -6,7 +7,11 @@ const Note = (props) => {
       <div className='note'>
         <h1>{props.title}</h1>
         <p>{props.content}</p>
-        <button>Delete</button>
+        <button onClick={()=>{
+          props.delete(props.id)
+        }}>
+        <DeleteForeverIcon/>
+        </button>
       </div>
     </>
   )
